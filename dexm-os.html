@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1.0">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -33,36 +33,54 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="wrap page-hero-grid">
-      <div class="hero-content">
+      <div class="page-hero-copy">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
           DEXM OS
         </div>
-
         <h1>The operating system behind every engagement.</h1>
-
-        <p class="hero-sub">
+        <p class="lead">
           DeXM OS turns ERP, financial, and shop-floor data into a live diagnostic — so the plan we run with PE sponsors, owners, and management teams to <b>stabilize cash</b>, <b>rebuild EBITDA</b>, and <b>restore enterprise value</b> is built on evidence, not assertions.
         </p>
-
         <div class="hero-ctas">
           <a href="#" class="btn btn-solid" data-open-modal>Discuss a Portfolio Situation</a>
           <a href="#modules" class="btn btn-text">View the Modules &rarr;</a>
         </div>
-
-        <div class="hero-sectors">
-          <b>FOUR MODULES:</b> CASH MAP &nbsp;·&nbsp; EBITDA BRIDGE &nbsp;·&nbsp; SKU MAP &nbsp;·&nbsp; HIDDEN FACTORY
+        <div class="page-kicker">
+          <span>CASH MAP</span><span>EBITDA BRIDGE</span><span>SKU MAP</span><span>HIDDEN FACTORY</span>
         </div>
       </div>
-
       <div class="platform-hero-visual rv">
         <img src="assets/dexm-dashboard-overview.png" alt="DeXM platform overview with revenue, EBITDA, cash runway and operating charts">
       </div>
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section class="services os-intro">
+  <!-- INTRO WORKFLOW -->
+  <section class="platform-intro">
+    <div class="wrap">
+      <div class="workflow rv">
+        <article class="workflow-step">
+          <b>STEP 01</b>
+          <h3>Load the operating data.</h3>
+          <p>Bring together SKU financials, sales orders, production orders and inventory snapshots from ERP, Excel and CSV exports.</p>
+        </article>
+        <article class="workflow-step">
+          <b>STEP 02</b>
+          <h3>Normalize SKU to cash.</h3>
+          <p>Reconcile the data through a common operating model so financial performance can be traced to factory-level drivers.</p>
+        </article>
+        <article class="workflow-step">
+          <b>STEP 03</b>
+          <h3>Prioritize the value plan.</h3>
+          <p>Size the cash and EBITDA opportunity by lever, assign actions and move the operating facts into the weekly cadence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section class="platform-modules" id="modules">
     <div class="wrap">
       <div class="section-head rv">
         <div class="eyebrow">FOUR MODULES</div>
@@ -70,23 +88,11 @@
         <p>Each module is built from the same underlying dataset, so the cash story, the EBITDA story, and the operational story always reconcile to one another.</p>
       </div>
 
-      <div class="workflow rv" style="margin-top: 40px;">
-        <article class="workflow-step"><b>STEP 01</b><h3>Load the operating data.</h3><p>Bring together SKU financials, sales orders, production orders and inventory snapshots from ERP, Excel and CSV exports.</p></article>
-        <article class="workflow-step"><b>STEP 02</b><h3>Normalize SKU to cash.</h3><p>Reconcile the data through a common operating model so financial performance can be traced to factory-level drivers.</p></article>
-        <article class="workflow-step"><b>STEP 03</b><h3>Prioritize the value plan.</h3><p>Size the cash and EBITDA opportunity by lever, assign actions and move the operating facts into the weekly cadence.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODULES -->
-  <section class="services os-modules" id="modules">
-    <div class="wrap">
-      <div class="os-card-grid rv">
-
+      <div class="module-list">
         <!-- MODULE 01 -->
-        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
-          <div>
-            <div class="service-num">01 — LIQUIDITY</div>
+        <article class="module rv">
+          <div class="module-copy">
+            <div class="card-num">01 — LIQUIDITY</div>
             <h3>Cash Map</h3>
             <p>A rolling 13-week cash forecast that shows exactly when liquidity breaks — not just that it eventually will. Weekly burn, cash runway, the week the balance crosses the minimum-cash covenant, and the size of the resulting funding gap are all visible on one screen.</p>
             <ul>
@@ -110,12 +116,12 @@
               <div class="cash-bar loss" style="height:25%" data-label="Penalties"></div>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- MODULE 02 -->
-        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
-          <div>
-            <div class="service-num">02 — MARGIN</div>
+        <article class="module rv">
+          <div class="module-copy">
+            <div class="card-num">02 — MARGIN</div>
             <h3>EBITDA Bridge</h3>
             <p>Reported EBITDA next to operationally-adjusted EBITDA, with every point of difference traced to a named source — SKU margin distortion, scrap and rework, changeover and downtime, quality loss, freight and logistics. Nothing is written off as "mix."</p>
             <ul>
@@ -140,12 +146,12 @@
               <div class="wf total" style="height:78%" data-label="Run-rate"></div>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- MODULE 03 -->
-        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
-          <div>
-            <div class="service-num">03 — PORTFOLIO</div>
+        <article class="module rv">
+          <div class="module-copy">
+            <div class="card-num">03 — PORTFOLIO</div>
             <h3>SKU Map</h3>
             <p>Every SKU, ranked by revenue against its true reported and operationally-adjusted margin — surfacing the low-volume tail driving changeovers, the negative-margin SKUs losing money on every order, and the high-value SKUs that aren't getting priority capacity.</p>
             <ul>
@@ -171,12 +177,12 @@
               <i class="bubble loss" style="width:28px;height:28px;left:43%;top:71%"></i>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- MODULE 04 -->
-        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
-          <div>
-            <div class="service-num">04 — OPERATIONS</div>
+        <article class="module rv">
+          <div class="module-copy">
+            <div class="card-num">04 — OPERATIONS</div>
             <h3>Hidden Factory</h3>
             <p>The operational loss that never appears as its own line in the P&amp;L — scrap, rework, unplanned downtime, OTIF misses, low-volume overhead — converted into a dollar figure and ranked by how recoverable it actually is.</p>
             <ul>
@@ -201,8 +207,7 @@
               <div class="factory-col" style="height:83%" data-label="Net"></div>
             </div>
           </div>
-        </div>
-
+        </article>
       </div>
     </div>
   </section>
@@ -232,13 +237,15 @@
     </div>
   </section>
 
-  <!-- CALL -->
+  <!-- CALL TO ACTION -->
   <section class="final-cta" id="contact">
     <div class="wrap rv">
       <div class="eyebrow" style="justify-content:center;">START THE CONVERSATION</div>
       <h2>Discuss a Portfolio Situation</h2>
       <p>If a portfolio company is burning cash, missing plan, or approaching a covenant, the sooner we're in the room, the more options remain.</p>
-      <a href="#" class="btn btn-solid" data-open-modal>Discuss a Portfolio Situation</a>
+      <div class="final-cta-actions">
+        <a href="#" class="btn btn-solid" data-open-modal>Discuss a Portfolio Situation</a>
+      </div>
       <div class="final-cta-note">INFO@DEXM-M.COM &nbsp;·&nbsp; NEW YORK, NY</div>
     </div>
   </section>
@@ -250,7 +257,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="logo">DeXM Management</a>
-        <p>Operating Partner for Private Equity portfolio companies. Working with PE sponsors, owners, and management teams of manufacturing companies to stabilize cash, rebuild EBITDA, and restore and create enterprise value.</p>
+        <p>Operating partner for PE sponsors, owners and management teams of manufacturing companies. Cash. EBITDA. Execution. Enterprise value.</p>
       </div>
       <div class="footer-col">
         <h4>Menu</h4>
@@ -261,7 +268,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="mailto:info@dexm-m.com">info@dexm-m.com</a>
-        <span class="fline">New York, NY</span>
+        <span>New York, NY</span>
         <a href="#" data-open-modal>Discuss a Portfolio Situation</a>
       </div>
     </div>
