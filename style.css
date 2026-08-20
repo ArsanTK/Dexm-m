@@ -179,13 +179,6 @@ nav.primary-nav a.active::after{
 .btn-ghost{border-color:var(--line);color:var(--text-2);}
 .btn-ghost:hover{border-color:var(--text-2);color:var(--text-1);background:transparent;}
 
-/* ---------- hero ---------- */
-.page-hero {
-  padding: 140px 0 80px;
-  position: relative;
-  border-bottom: 1px solid var(--line-soft);
-}
-
 .page-hero::before {
   content: "";
   position: absolute;
