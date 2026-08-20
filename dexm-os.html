@@ -1,375 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DeXM | Enterprise Operating System</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeXM OS — DeXM Management</title>
+<meta name="description" content="The diagnostic operating system behind every DeXM Management engagement — Cash Map, EBITDA Bridge, SKU Map, and Hidden Factory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1.0">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="wrap">
-      <a href="#" class="logo">DeXM OS</a>
-      <nav class="primary-nav">
-        <a href="#solutions" class="active">Solutions</a>
-        <a href="#narrative">Platform</a>
-        <a href="#plan">100-Day Plan</a>
-        <a href="#results">Impact</a>
-        <a href="#about">About</a>
-      </nav>
-      <div class="header-cta">
-        <button class="btn btn-solid" onclick="toggleModal(true)">
-          <span class="btn-text">Request Access</span>
-        </button>
-        <button class="menu-toggle" onclick="toggleMobileNav()">Menu</button>
-      </div>
-    </div>
-  </header>
-  <div class="nav-scrim" onclick="toggleMobileNav(false)"></div>
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo">DeXM Management</a>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-content rv in">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span> Next-Gen Enterprise Infrastructure
-        </div>
-        <h1>Unified operational Intelligence for complex markets.</h1>
-        <p class="hero-sub">
-          DeXM integrates legacy systems, real-time analytics, and automated decision engines into <b>one seamless operating system</b>.
-        </p>
-        <div class="hero-ctas">
-          <button class="btn btn-solid" onclick="toggleModal(true)">Deploy DeXM OS</button>
-          <a href="#plan" class="btn btn-ghost">Explore Roadmap</a>
-        </div>
-        <div class="hero-sectors">
-          <b>Tailored For:</b> FinTech &bull; Supply Chain &bull; Energy &bull; HealthTech
-        </div>
-      </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      Menu
+    </button>
 
-      <!-- Dashboard Metric Panel -->
-      <div class="panel rv in">
-        <div class="panel-head">
-          <div><span class="dot"></span> Live Telemetry</div>
-          <div>Node #0412-Active</div>
-        </div>
-        <div class="metric-grid">
-          <div class="metric">
-            <div class="metric-label">Efficiency Gain</div>
-            <div class="metric-value">+38.4<small>%</small></div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Latency Reduction</div>
-            <div class="metric-value">-142<small>ms</small></div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Data Throughput</div>
-            <div class="metric-value">4.2<small>TB/s</small></div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Uptime Integrity</div>
-            <div class="metric-value">99.99<small>%</small></div>
-          </div>
-        </div>
-        <div class="panel-foot">
-          System State: OPTIMAL &mdash; Synchronized 2s ago
-        </div>
-      </div>
-    </div>
-  </section>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="solutions.html">Solutions</a>
+      <a href="dexm-os.html" class="active">DeXM OS</a>
+      <a href="about.html">About</a>
+    </nav>
 
-  <!-- Positioning Statement -->
-  <section class="statement">
-    <div class="wrap rv">
-      <div class="statement-rule"></div>
-      <h2>Enterprise platforms shouldn't add noise. <em>DeXM transforms fragmented data into actionable, automated velocity.</em></h2>
-    </div>
-  </section>
-
-  <!-- Narrative Section -->
-  <section class="narrative" id="narrative">
-    <div class="wrap narrative-grid rv">
-      <div class="narrative-tag">// Core Architecture</div>
-      <div class="narrative-body">
-        <h2>Designed to eliminate organizational friction.</h2>
-        <p>Traditional operations suffer from data silos, delayed reporting, and fragmented workflows. DeXM acts as the central nervous system for your digital architecture.</p>
-        <p>By connecting every data source in real time, leadership gains absolute clarity while execution teams work from a single, verified state of truth.</p>
-        <ul>
-          <li><strong>Zero-Copy Data Architecture:</strong> Query across distributed databases without expensive migration cycles.</li>
-          <li><strong>Autonomous Process Routing:</strong> Automatically flag and resolve operational bottlenecks before they cascade.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services / Solutions -->
-  <section class="services" id="solutions">
-    <div class="wrap">
-      <div class="section-head rv">
-        <div class="eyebrow">Capabilities</div>
-        <h2>Engineered for scale, security, and precision.</h2>
-        <p>DeXM OS modular capabilities can be deployed piecemeal or integrated as a full-stack operational engine.</p>
-      </div>
-
-      <div class="service-list rv">
-        <div class="service-card">
-          <div class="service-num">01 / ANALYTICS</div>
-          <h3>Real-time Data Fabric</h3>
-          <p>Stream live telemetry across distributed environments with near-zero latency overhead.</p>
-          <ul>
-            <li>Sub-millisecond ingestion</li>
-            <li>Custom pipeline triggers</li>
-            <li>Automated data governance</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-num">02 / AUTOMATION</div>
-          <h3>Process Orchestration</h3>
-          <p>Build and monitor automated cross-departmental workflows from an intuitive interface.</p>
-          <ul>
-            <li>No-code rule designer</li>
-            <li>Error auto-remediation</li>
-            <li>Full audit logging</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-num">03 / SECURITY</div>
-          <h3>Zero-Trust Compliance</h3>
-          <p>End-to-end security protocol engineered for strict regulatory environments.</p>
-          <ul>
-            <li>Role-based access control</li>
-            <li>Automated threat monitoring</li>
-            <li>Continuous compliance reporting</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 100-Day Plan -->
-  <section class="plan" id="plan">
-    <div class="wrap">
-      <div class="section-head center rv">
-        <div class="eyebrow">Deployment Roadmap</div>
-        <h2>The 100-Day Integration Plan</h2>
-        <p>Our rapid deployment framework ensures seamless transition with zero operational downtime.</p>
-      </div>
-
-      <div class="plan-graphic rv">
-        <div class="phase-row">
-          <div class="phase">
-            <div class="phase-range">Days 01 &ndash; 30</div>
-            <h3>Discovery & Mapping</h3>
-            <ul>
-              <li>Audit legacy system dependencies</li>
-              <li>Establish real-time data connectors</li>
-              <li>Map initial security & policy controls</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-range">Days 31 &ndash; 60</div>
-            <h3>Parallel Execution</h3>
-            <ul>
-              <li>Deploy DeXM OS side-by-side</li>
-              <li>Validate telemetry & metric fidelity</li>
-              <li>Train operational leads and admins</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-range">Days 61 &ndash; 100</div>
-            <h3>Full Optimization</h3>
-            <ul>
-              <li>Decommission legacy bottlenecks</li>
-              <li>Enable automated process routing</li>
-              <li>Hand over unified control panel</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Impact / Results -->
-  <section class="results" id="results">
-    <div class="wrap">
-      <div class="section-head rv">
-        <div class="eyebrow">Proven Outcomes</div>
-        <h2>Measurable performance gains.</h2>
-      </div>
-
-      <div class="results-grid rv">
-        <div class="stat">
-          <div class="stat-num up">42%</div>
-          <div class="stat-label">Faster Decision Execution</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num down">65%</div>
-          <div class="stat-label">System Downtime Events</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num up">3.8x</div>
-          <div class="stat-label">Return on Infrastructure Investment</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Audit-Ready Compliance Coverage</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Copy -->
-  <section class="about-copy" id="about">
-    <div class="wrap about-copy-grid rv">
-      <div>
-        <div class="eyebrow" style="margin-bottom: 16px;">Our Philosophy</div>
-        <h2>Engineered by operators, built for enterprise speed.</h2>
-      </div>
-      <div>
-        <p>We built DeXM because existing enterprise software was either too rigid to adapt or too complex to maintain. Modern organizations need the speed of a startup with the security of a global bank.</p>
-        <p><strong>DeXM eliminates trade-offs between speed, security, and clarity.</strong> Our modular system gives you total control over how data flows and how decisions are made.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="final-cta">
-    <div class="wrap rv">
-      <h2>Ready to modernize your operations?</h2>
-      <p>Schedule a demonstration with our systems architecture team and see DeXM OS operating in real-time environments.</p>
-      <button class="btn btn-solid" onclick="toggleModal(true)">Schedule Executive Demo</button>
-      <div class="final-cta-note">Deployment timeline: Under 100 Days guaranteed.</div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="logo">DeXM OS</a>
-          <p>The unified enterprise operating system for real-time telemetry and process automation.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="#solutions">Solutions</a>
-          <a href="#narrative">Platform</a>
-          <a href="#plan">100-Day Plan</a>
-          <a href="#results">Impact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <span class="fline">enterprise@dexm-os.io</span>
-          <span class="fline">+1 (800) 555-0199</span>
-          <span class="fline">New York &bull; London &bull; Tokyo</span>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>&copy; 2026 DeXM Operating Systems Inc. All rights reserved.</div>
-        <div>Zero-Trust Architecture v4.2</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modal / Contact Form -->
-  <div class="modal-scrim" id="modalScrim">
-    <div class="modal">
-      <button class="modal-close" onclick="toggleModal(false)">&times;</button>
-      <h3>Request Enterprise Access</h3>
-      <div class="modal-sub">Leave your details and a solutions architect will contact you within 24 hours.</div>
-
-      <form id="contactForm" onsubmit="handleFormSubmit(event)">
-        <div class="field">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" required placeholder="Jane Doe">
-        </div>
-        <div class="field">
-          <label for="workEmail">Work Email</label>
-          <input type="email" id="workEmail" required placeholder="jane@company.com">
-        </div>
-        <div class="field">
-          <label for="companyName">Company / Organization</label>
-          <input type="text" id="companyName" required placeholder="Acme Global">
-        </div>
-        <div class="field">
-          <label for="message">Project Scope / Requirements</label>
-          <textarea id="message" placeholder="Briefly describe your infrastructure needs..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-solid modal-submit">Submit Request</button>
-        <div class="form-status" id="formStatus"></div>
-      </form>
+    <div class="header-cta">
+      <a href="#" class="btn btn-text" data-open-modal>
+        Discuss a Portfolio Situation
+      </a>
     </div>
   </div>
+</header>
 
-  <!-- Interactive Scripts -->
-  <script>
-    // Header Scroll state
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+<div class="nav-scrim" id="navScrim"></div>
 
-    // Scroll reveal observer
-    const rvElements = document.querySelectorAll('.rv');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-        }
-      });
-    }, { threshold: 0.1 });
-    rvElements.forEach(el => observer.observe(el));
+<main>
 
-    // Modal Handling
-    function toggleModal(open) {
-      const scrim = document.getElementById('modalScrim');
-      if (open) {
-        scrim.classList.add('open');
-      } else {
-        scrim.classList.remove('open');
-      }
-    }
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
 
-    // Mobile Navigation Handling
-    function toggleMobileNav(forceState) {
-      const nav = document.querySelector('nav.primary-nav');
-      const navScrim = document.querySelector('.nav-scrim');
-      const shouldOpen = forceState !== undefined ? forceState : !nav.classList.contains('open');
+      <div class="hero-content">
 
-      if (shouldOpen) {
-        nav.classList.add('open');
-        navScrim.classList.add('open');
-      } else {
-        nav.classList.remove('open');
-        navScrim.classList.remove('open');
-      }
-    }
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          DEXM OS
+        </div>
 
-    // Form Submission Handler
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const status = document.getElementById('formStatus');
-      status.className = 'form-status show ok';
-      status.innerText = 'Request submitted. A representative will be in touch shortly.';
-      setTimeout(() => {
-        toggleModal(false);
-        document.getElementById('contactForm').reset();
-        status.className = 'form-status';
-      }, 2500);
-    }
-  </script>
+        <h1>The operating system behind every engagement.</h1>
+
+        <p class="hero-sub">
+          DeXM OS turns ERP, financial, and shop-floor data into a live diagnostic — so the plan we run with PE sponsors, owners, and management teams to <b>stabilize cash</b>, <b>rebuild EBITDA</b>, and <b>restore enterprise value</b> is built on evidence, not assertions.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-solid" data-open-modal>
+            Discuss a Portfolio Situation
+          </a>
+
+          <a href="#modules" class="btn btn-text">
+            View the Modules &rarr;
+          </a>
+        </div>
+
+        <div class="hero-sectors">
+          <b>FOUR MODULES:</b>
+          CASH MAP &nbsp;·&nbsp;
+          EBITDA BRIDGE &nbsp;·&nbsp;
+          SKU MAP &nbsp;·&nbsp;
+          HIDDEN FACTORY
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="services os-intro">
+    <div class="wrap">
+
+      <div class="section-head rv">
+        <div class="eyebrow">FOUR MODULES</div>
+
+        <h2>
+          Cash, EBITDA, SKUs, and the losses the P&amp;L never shows.
+        </h2>
+
+        <p>
+          Each module is built from the same underlying dataset, so the cash story,
+          the EBITDA story, and the operational story always reconcile to one another.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MODULES -->
+  <section class="services os-modules" id="modules">
+    <div class="wrap">
+
+      <div class="os-card-grid rv">
+
+
+        <!-- 01 — CASH MAP -->
+        <div class="service-card">
+
+          <div class="service-num">01 — LIQUIDITY</div>
+
+          <h3>Cash Map</h3>
+
+          <p>
+            A rolling 13-week cash forecast that shows exactly when liquidity breaks —
+            not just that it eventually will. Weekly burn, cash runway, the week the
+            balance crosses the minimum-cash covenant, and the size of the resulting
+            funding gap are all visible on one screen.
+          </p>
+
+          <ul>
+            <li>Base weekly burn and runway in weeks, updated as actuals come in</li>
+            <li>Minimum-cash breach week flagged against the covenant floor</li>
+            <li>Recommended actions ranked by weeks of runway preserved</li>
+          </ul>
+
+          <!-- SAME IMAGE FROM ORIGINAL PAGE -->
+          <img
+            src="assets/manufacturing-metals.webp"
+            alt="Metals production line — Cash Map"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- 02 — EBITDA BRIDGE -->
+        <div class="service-card">
+
+          <div class="service-num">02 — MARGIN</div>
+
+          <h3>EBITDA Bridge</h3>
+
+          <p>
+            Reported EBITDA next to operationally-adjusted EBITDA, with every point
+            of difference traced to a named source — SKU margin distortion, scrap
+            and rework, changeover and downtime, quality loss, freight and logistics.
+            Nothing is written off as "mix."
+          </p>
+
+          <ul>
+            <li>Reported vs. ODD-adjusted EBITDA, side by side</li>
+            <li>Identified leakage broken out by driver and dollar value</li>
+            <li>Recommended actions ranked by EBITDA recovered</li>
+          </ul>
+
+        </div>
+
+
+        <!-- 03 — SKU MAP -->
+        <div class="service-card">
+
+          <div class="service-num">03 — PORTFOLIO</div>
+
+          <h3>SKU Map</h3>
+
+          <p>
+            Every SKU, ranked by revenue against its true reported and
+            operationally-adjusted margin — surfacing the low-volume tail driving
+            changeovers, the negative-margin SKUs losing money on every order,
+            and the high-value SKUs that aren't getting priority capacity.
+          </p>
+
+          <ul>
+            <li>Negative-margin and margin-risk SKUs flagged for exit or repricing</li>
+            <li>Low-volume tail quantified against changeover cost</li>
+            <li>Scale / monitor / exit decision on every line</li>
+          </ul>
+
+          <!-- SAME IMAGE FROM ORIGINAL PAGE -->
+          <img
+            src="assets/manufacturing-food.webp"
+            alt="Food manufacturing production line — SKU Map"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- 04 — HIDDEN FACTORY -->
+        <div class="service-card">
+
+          <div class="service-num">04 — OPERATIONS</div>
+
+          <h3>Hidden Factory</h3>
+
+          <p>
+            The operational loss that never appears as its own line in the P&amp;L —
+            scrap, rework, unplanned downtime, OTIF misses, low-volume overhead —
+            converted into a dollar figure and ranked by how recoverable it actually is.
+          </p>
+
+          <ul>
+            <li>Total hidden factory loss, annualized and as a % of revenue</li>
+            <li>First pass yield, scrap rate, and OEE against green/red thresholds</li>
+            <li>Top loss drivers ranked by expected recovery and priority</li>
+          </ul>
+
+          <!-- SAME IMAGE FROM ORIGINAL PAGE -->
+          <img
+            src="assets/manufacturing-precision.webp"
+            alt="Precision manufacturing equipment — Hidden Factory"
+            loading="lazy"
+          >
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SUPPORTING VISUALS -->
+  <!--
+    These are the same three images from the original page.
+    Kept separate so they do not interfere with the existing
+    os-card-grid/service-card spacing.
+  -->
+
+  <section class="visual-section">
+    <div class="wrap">
+
+      <div class="section-head rv">
+        <div class="eyebrow">DATA GROUNDED IN OPERATIONS</div>
+
+        <h2>
+          Built for industrial reality, not abstract reporting.
+        </h2>
+
+        <p>
+          The platform connects operating signals from metals, precision
+          manufacturing and food production to the cash and EBITDA decisions
+          that matter.
+        </p>
+      </div>
+
+      <div class="visual-grid rv">
+
+        <figure class="visual-card">
+          <img
+            src="assets/manufacturing-metals.webp"
+            alt="Metals production line"
+            loading="lazy"
+          >
+
+          <figcaption class="visual-caption">
+            <b>Cash Map</b>
+            <span>Inventory · Freight · Terms</span>
+          </figcaption>
+        </figure>
+
+
+        <figure class="visual-card">
+          <img
+            src="assets/manufacturing-precision.webp"
+            alt="Precision manufacturing equipment"
+            loading="lazy"
+          >
+
+          <figcaption class="visual-caption">
+            <b>Hidden Factory</b>
+            <span>Scrap · Rework · Yield</span>
+          </figcaption>
+        </figure>
+
+
+        <figure class="visual-card">
+          <img
+            src="assets/manufacturing-food.webp"
+            alt="Food manufacturing production line"
+            loading="lazy"
+          >
+
+          <figcaption class="visual-caption">
+            <b>SKU Economics</b>
+            <span>Margin · Mix · Complexity</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CALL -->
+  <section class="final-cta" id="contact">
+
+    <div class="wrap rv">
+
+      <div class="eyebrow" style="justify-content:center;">
+        START THE CONVERSATION
+      </div>
+
+      <h2>Discuss a Portfolio Situation</h2>
+
+      <p>
+        If a portfolio company is burning cash, missing plan, or approaching
+        a covenant, the sooner we're in the room, the more options remain.
+      </p>
+
+      <a href="#" class="btn btn-solid" data-open-modal>
+        Discuss a Portfolio Situation
+      </a>
+
+      <div class="final-cta-note">
+        INFO@DEXM-M.COM &nbsp;·&nbsp; NEW YORK, NY
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="wrap">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="logo">
+          DeXM Management
+        </a>
+
+        <p>
+          Operating Partner for Private Equity portfolio companies.
+          Working with PE sponsors, owners, and management teams of
+          manufacturing companies to stabilize cash, rebuild EBITDA,
+          and restore and create enterprise value.
+        </p>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h4>Menu</h4>
+
+        <a href="solutions.html">Solutions</a>
+        <a href="dexm-os.html">DeXM OS</a>
+        <a href="about.html">About</a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h4>Contact</h4>
+
+        <a href="mailto:info@dexm-m.com">
+          info@dexm-m.com
+        </a>
+
+        <span class="fline">
+          New York, NY
+        </span>
+
+        <a href="#" data-open-modal>
+          Discuss a Portfolio Situation
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 DeXM Management. All rights reserved.
+      </span>
+
+      <span>
+        Cash. EBITDA. Execution. Enterprise Value.
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- CONTACT MODAL -->
+
+<div class="modal-scrim" id="contactModal">
+
+  <div class="modal">
+
+    <button
+      class="modal-close"
+      data-modal-close
+      aria-label="Close"
+    >
+      &times;
+    </button>
+
+    <h3>Discuss a Portfolio Situation</h3>
+
+    <p class="modal-sub">
+      Tell us briefly about the situation. We typically respond within one business day.
+    </p>
+
+    <form
+      id="contactForm"
+      action="https://formsubmit.co/ajax/kas031099@gmail.com"
+      method="POST"
+    >
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New portfolio inquiry — DeXM Management website"
+      >
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
+
+
+      <div class="field">
+
+        <label for="cf-name">
+          Name
+        </label>
+
+        <input
+          type="text"
+          id="cf-name"
+          name="name"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="cf-email">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="cf-email"
+          name="email"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="cf-tel">
+          Tel.
+        </label>
+
+        <input
+          type="tel"
+          id="cf-tel"
+          name="tel"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="cf-message">
+          Message
+        </label>
+
+        <textarea
+          id="cf-message"
+          name="message"
+          placeholder="Briefly describe the portfolio situation"
+        ></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="btn btn-solid modal-submit"
+      >
+        Send
+      </button>
+
+      <div
+        class="form-status"
+        id="formStatus"
+      ></div>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
