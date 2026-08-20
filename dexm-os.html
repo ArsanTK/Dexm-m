@@ -32,7 +32,7 @@
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <div class="wrap">
+    <div class="wrap page-hero-grid">
       <div class="hero-content">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
@@ -54,6 +54,10 @@
           <b>FOUR MODULES:</b> CASH MAP &nbsp;·&nbsp; EBITDA BRIDGE &nbsp;·&nbsp; SKU MAP &nbsp;·&nbsp; HIDDEN FACTORY
         </div>
       </div>
+
+      <div class="platform-hero-visual rv">
+        <img src="assets/dexm-dashboard-overview.png" alt="DeXM platform overview with revenue, EBITDA, cash runway and operating charts">
+      </div>
     </div>
   </section>
 
@@ -65,6 +69,12 @@
         <h2>Cash, EBITDA, SKUs, and the losses the P&amp;L never shows.</h2>
         <p>Each module is built from the same underlying dataset, so the cash story, the EBITDA story, and the operational story always reconcile to one another.</p>
       </div>
+
+      <div class="workflow rv" style="margin-top: 40px;">
+        <article class="workflow-step"><b>STEP 01</b><h3>Load the operating data.</h3><p>Bring together SKU financials, sales orders, production orders and inventory snapshots from ERP, Excel and CSV exports.</p></article>
+        <article class="workflow-step"><b>STEP 02</b><h3>Normalize SKU to cash.</h3><p>Reconcile the data through a common operating model so financial performance can be traced to factory-level drivers.</p></article>
+        <article class="workflow-step"><b>STEP 03</b><h3>Prioritize the value plan.</h3><p>Size the cash and EBITDA opportunity by lever, assign actions and move the operating facts into the weekly cadence.</p></article>
+      </div>
     </div>
   </section>
 
@@ -73,50 +83,151 @@
     <div class="wrap">
       <div class="os-card-grid rv">
 
-        <div class="service-card">
-          <div class="service-num">01 — LIQUIDITY</div>
-          <h3>Cash Map</h3>
-          <p>A rolling 13-week cash forecast that shows exactly when liquidity breaks — not just that it eventually will. Weekly burn, cash runway, the week the balance crosses the minimum-cash covenant, and the size of the resulting funding gap are all visible on one screen.</p>
-          <ul>
-            <li>Base weekly burn and runway in weeks, updated as actuals come in</li>
-            <li>Minimum-cash breach week flagged against the covenant floor</li>
-            <li>Recommended actions ranked by weeks of runway preserved</li>
-          </ul>
+        <!-- MODULE 01 -->
+        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+          <div>
+            <div class="service-num">01 — LIQUIDITY</div>
+            <h3>Cash Map</h3>
+            <p>A rolling 13-week cash forecast that shows exactly when liquidity breaks — not just that it eventually will. Weekly burn, cash runway, the week the balance crosses the minimum-cash covenant, and the size of the resulting funding gap are all visible on one screen.</p>
+            <ul>
+              <li>Base weekly burn and runway in weeks, updated as actuals come in</li>
+              <li>Minimum-cash breach week flagged against the covenant floor</li>
+              <li>Recommended actions ranked by weeks of runway preserved</li>
+            </ul>
+          </div>
+          <div class="dashboard" role="img" aria-label="Illustrative Cash Map dashboard">
+            <div class="dash-head"><b>CASH MAP</b><span>LIVE ANALYSIS</span></div>
+            <div class="dash-kpis">
+              <div class="dash-kpi"><small>ADDRESSABLE</small><b>$6.5M</b></div>
+              <div class="dash-kpi"><small>EXCESS INV.</small><b>$4.67M</b></div>
+              <div class="dash-kpi"><small>NEG. MARGIN</small><b>96 SKU</b></div>
+            </div>
+            <div class="cash-bars">
+              <div class="cash-bar" style="height:82%" data-label="Inventory"></div>
+              <div class="cash-bar loss" style="height:57%" data-label="Margin"></div>
+              <div class="cash-bar loss" style="height:38%" data-label="Freight"></div>
+              <div class="cash-bar" style="height:31%" data-label="Terms"></div>
+              <div class="cash-bar loss" style="height:25%" data-label="Penalties"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-num">02 — MARGIN</div>
-          <h3>EBITDA Bridge</h3>
-          <p>Reported EBITDA next to operationally-adjusted EBITDA, with every point of difference traced to a named source — SKU margin distortion, scrap and rework, changeover and downtime, quality loss, freight and logistics. Nothing is written off as "mix."</p>
-          <ul>
-            <li>Reported vs. ODD-adjusted EBITDA, side by side</li>
-            <li>Identified leakage broken out by driver and dollar value</li>
-            <li>Recommended actions ranked by EBITDA recovered</li>
-          </ul>
+        <!-- MODULE 02 -->
+        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+          <div>
+            <div class="service-num">02 — MARGIN</div>
+            <h3>EBITDA Bridge</h3>
+            <p>Reported EBITDA next to operationally-adjusted EBITDA, with every point of difference traced to a named source — SKU margin distortion, scrap and rework, changeover and downtime, quality loss, freight and logistics. Nothing is written off as "mix."</p>
+            <ul>
+              <li>Reported vs. ODD-adjusted EBITDA, side by side</li>
+              <li>Identified leakage broken out by driver and dollar value</li>
+              <li>Recommended actions ranked by EBITDA recovered</li>
+            </ul>
+          </div>
+          <div class="dashboard" role="img" aria-label="Illustrative EBITDA Bridge dashboard">
+            <div class="dash-head"><b>EBITDA BRIDGE</b><span>REPORTED → RUN-RATE</span></div>
+            <div class="dash-kpis">
+              <div class="dash-kpi"><small>REPORTED</small><b>4.6%</b></div>
+              <div class="dash-kpi"><small>OPPORTUNITY</small><b>+320 bps</b></div>
+              <div class="dash-kpi"><small>RUN-RATE</small><b>7.8%</b></div>
+            </div>
+            <div class="waterfall">
+              <div class="wf total" style="height:46%" data-label="Reported"></div>
+              <div class="wf pos" style="height:18%" data-label="Scrap"></div>
+              <div class="wf pos" style="height:27%" data-label="Price"></div>
+              <div class="wf neg" style="height:13%" data-label="OTIF"></div>
+              <div class="wf pos" style="height:23%" data-label="Labor"></div>
+              <div class="wf total" style="height:78%" data-label="Run-rate"></div>
+            </div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-num">03 — PORTFOLIO</div>
-          <h3>SKU Map</h3>
-          <p>Every SKU, ranked by revenue against its true reported and operationally-adjusted margin — surfacing the low-volume tail driving changeovers, the negative-margin SKUs losing money on every order, and the high-value SKUs that aren't getting priority capacity.</p>
-          <ul>
-            <li>Negative-margin and margin-risk SKUs flagged for exit or repricing</li>
-            <li>Low-volume tail quantified against changeover cost</li>
-            <li>Scale / monitor / exit decision on every line</li>
-          </ul>
+        <!-- MODULE 03 -->
+        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+          <div>
+            <div class="service-num">03 — PORTFOLIO</div>
+            <h3>SKU Map</h3>
+            <p>Every SKU, ranked by revenue against its true reported and operationally-adjusted margin — surfacing the low-volume tail driving changeovers, the negative-margin SKUs losing money on every order, and the high-value SKUs that aren't getting priority capacity.</p>
+            <ul>
+              <li>Negative-margin and margin-risk SKUs flagged for exit or repricing</li>
+              <li>Low-volume tail quantified against changeover cost</li>
+              <li>Scale / monitor / exit decision on every line</li>
+            </ul>
+          </div>
+          <div class="dashboard" role="img" aria-label="Illustrative SKU Map dashboard">
+            <div class="dash-head"><b>SKU MAP</b><span>758 SKUs CLASSIFIED</span></div>
+            <div class="dash-kpis">
+              <div class="dash-kpi"><small>CORE</small><b>312</b></div>
+              <div class="dash-kpi"><small>TAIL</small><b>238</b></div>
+              <div class="dash-kpi"><small>LOSS</small><b>96</b></div>
+            </div>
+            <div class="sku-map">
+              <i class="bubble" style="width:62px;height:62px;left:69%;top:18%"></i>
+              <i class="bubble" style="width:35px;height:35px;left:58%;top:27%"></i>
+              <i class="bubble" style="width:48px;height:48px;left:76%;top:52%"></i>
+              <i class="bubble tail" style="width:31px;height:31px;left:33%;top:29%"></i>
+              <i class="bubble tail" style="width:45px;height:45px;left:21%;top:17%"></i>
+              <i class="bubble loss" style="width:52px;height:52px;left:25%;top:63%"></i>
+              <i class="bubble loss" style="width:28px;height:28px;left:43%;top:71%"></i>
+            </div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-num">04 — OPERATIONS</div>
-          <h3>Hidden Factory</h3>
-          <p>The operational loss that never appears as its own line in the P&amp;L — scrap, rework, unplanned downtime, OTIF misses, low-volume overhead — converted into a dollar figure and ranked by how recoverable it actually is.</p>
-          <ul>
-            <li>Total hidden factory loss, annualized and as a % of revenue</li>
-            <li>First pass yield, scrap rate, and OEE against green/red thresholds</li>
-            <li>Top loss drivers ranked by expected recovery and priority</li>
-          </ul>
+        <!-- MODULE 04 -->
+        <div class="service-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+          <div>
+            <div class="service-num">04 — OPERATIONS</div>
+            <h3>Hidden Factory</h3>
+            <p>The operational loss that never appears as its own line in the P&amp;L — scrap, rework, unplanned downtime, OTIF misses, low-volume overhead — converted into a dollar figure and ranked by how recoverable it actually is.</p>
+            <ul>
+              <li>Total hidden factory loss, annualized and as a % of revenue</li>
+              <li>First pass yield, scrap rate, and OEE against green/red thresholds</li>
+              <li>Top loss drivers ranked by expected recovery and priority</li>
+            </ul>
+          </div>
+          <div class="dashboard" role="img" aria-label="Illustrative Hidden Factory dashboard">
+            <div class="dash-head"><b>HIDDEN FACTORY</b><span>RECOVERABLE EBITDA</span></div>
+            <div class="dash-kpis">
+              <div class="dash-kpi"><small>SCRAP</small><b>2.4%</b></div>
+              <div class="dash-kpi"><small>REWORK</small><b>6.1%</b></div>
+              <div class="dash-kpi"><small>RECOVERABLE</small><b>$3.1M</b></div>
+            </div>
+            <div class="factory-chart">
+              <div class="factory-col" style="height:66%" data-label="Gross"></div>
+              <div class="factory-col recoverable" style="height:18%" data-label="Scrap"></div>
+              <div class="factory-col recoverable" style="height:34%" data-label="Rework"></div>
+              <div class="factory-col recoverable" style="height:24%" data-label="Yield"></div>
+              <div class="factory-col" style="height:15%" data-label="OTIF"></div>
+              <div class="factory-col" style="height:83%" data-label="Net"></div>
+            </div>
+          </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIAL VISUALS -->
+  <section class="visual-section">
+    <div class="wrap">
+      <div class="section-head rv">
+        <div class="eyebrow">DATA GROUNDED IN OPERATIONS</div>
+        <h2>Built for industrial reality, not abstract reporting.</h2>
+        <p>The platform connects operating signals from metals, precision manufacturing and food production to the cash and EBITDA decisions that matter.</p>
+      </div>
+      <div class="visual-grid rv">
+        <figure class="visual-card">
+          <img src="assets/manufacturing-metals.webp" alt="Metals production line" loading="lazy">
+          <figcaption class="visual-caption"><b>Cash Map</b><span>Inventory · Freight · Terms</span></figcaption>
+        </figure>
+        <figure class="visual-card">
+          <img src="assets/manufacturing-precision.webp" alt="Precision manufacturing equipment" loading="lazy">
+          <figcaption class="visual-caption"><b>Hidden Factory</b><span>Scrap · Rework · Yield</span></figcaption>
+        </figure>
+        <figure class="visual-card">
+          <img src="assets/manufacturing-food.webp" alt="Food manufacturing production line" loading="lazy">
+          <figcaption class="visual-caption"><b>SKU Economics</b><span>Margin · Mix · Complexity</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
