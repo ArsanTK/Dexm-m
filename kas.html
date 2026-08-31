@@ -101,7 +101,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 44px 30px 20px;
+      padding: 44px 30px 36px;
       gap: 22px;
     }
 
@@ -299,21 +299,24 @@
     }
 
     .copy-status {
-      position: fixed;
-      left: 24px;
-      bottom: 20px;
+      position: absolute;
+      left: 30px;
+      bottom: -18px;
       font-family: var(--mono);
       font-size: 9px;
       letter-spacing: .07em;
       text-transform: uppercase;
       color: var(--gold);
       opacity: 0;
-      transition: opacity .2s ease;
+      transition: opacity .2s ease, transform .2s ease;
+      transform: translateY(4px);
       pointer-events: none;
+      white-space: nowrap;
     }
 
     .copy-status.show {
       opacity: 1;
+      transform: translateY(0);
     }
 
     .card-foot {

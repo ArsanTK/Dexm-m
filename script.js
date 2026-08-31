@@ -188,12 +188,18 @@ function initContactCard() {
 
   async function showCopyFeedback(element, duration = 1200) {
     const original = element.textContent;
+    const originalColor = window.getComputedStyle(element).color;
+    
     element.textContent = 'Copied ✓';
+    element.style.color = 'var(--gold)';
+    
     if (copyStatus) {
       copyStatus.classList.add('show');
     }
+    
     setTimeout(() => {
       element.textContent = original;
+      element.style.color = '';
       if (copyStatus) {
         copyStatus.classList.remove('show');
       }
