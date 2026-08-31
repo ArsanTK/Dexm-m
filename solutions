@@ -14,7 +14,13 @@
 
 <header id="siteHeader">
   <div class="wrap">
-    <a href="index.html" class="logo">DeXM Management</a>
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
+        <polygon points="0,0 14,0 40,40 26,40" fill="#EEF0F4"/>
+        <polygon points="40,0 26,0 0,40 14,40" fill="#C6A15B"/>
+      </svg>
+      DeXM Management
+    </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <nav class="primary-nav" id="primaryNav">
       <a href="solutions.html" class="active">Solutions</a>

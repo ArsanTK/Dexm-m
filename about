@@ -14,7 +14,13 @@
 
 <header id="siteHeader">
   <div class="wrap">
-    <a href="index.html" class="logo">DeXM Management</a>
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
+        <polygon points="0,0 14,0 40,40 26,40" fill="#EEF0F4"/>
+        <polygon points="40,0 26,0 0,40 14,40" fill="#C6A15B"/>
+      </svg>
+      DeXM Management
+    </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <nav class="primary-nav" id="primaryNav">
       <a href="solutions.html">Solutions</a>
@@ -70,7 +76,7 @@
           <p>We are engaged to address <strong>operational underperformance, liquidity pressure, and margin erosion</strong> — stepping in as interim leadership or as an embedded operating partner alongside PE sponsors, owners and management teams of manufacturing companies to stabilize cash, rebuild EBITDA, and restore and create enterprise value in industrial and manufacturing companies.</p>
         </div>
         <div>
-          <p>Track record includes a <strong>235% EBITDA improvement</strong>, P&amp;L responsibility of up to <strong>$520M</strong>, leadership of organizations with up to <strong>1,000 employees</strong>, restructuring of <strong>$60M</strong> in debt, and a successful exit generating a <strong>>2x gross MOIC</strong> and a <strong>>20% five-year gross IRR</strong>.</p>
+          <p>Track record includes a <strong>>230% EBITDA improvement</strong>, P&amp;L responsibility of up to <strong>$520M</strong>, leadership of organizations with up to <strong>1,000 employees</strong>, restructuring of <strong>$60M</strong> in debt, and a successful exit generating a <strong>>2x gross MOIC</strong> and a <strong>>20% five-year gross IRR</strong>.</p>
           <p>DeXM partners with <strong>Boards, Investment Committees, lenders, and management teams</strong> to protect enterprise value and improve exit outcomes — from the first 30 days of a liquidity crisis through the discipline that sustains performance long after.</p>
         </div>
       </div>
@@ -90,7 +96,7 @@
         <div class="stat"><div class="stat-num up">370%</div><div class="stat-label">Manufacturing output increase</div></div>
         <div class="stat"><div class="stat-num down">33%</div><div class="stat-label">Operating expense reduction</div></div>
         <div class="stat"><div class="stat-num down">47%</div><div class="stat-label">Waste reduction</div></div>
-        <div class="stat"><div class="stat-num up">235%</div><div class="stat-label">EBITDA improvement</div></div>
+        <div class="stat"><div class="stat-num up">>230%</div><div class="stat-label">EBITDA improvement</div></div>
         <div class="stat"><div class="stat-num up">15%</div><div class="stat-label">Working capital released</div></div>
         <div class="stat"><div class="stat-num">$60M+</div><div class="stat-label">Debt restructured</div></div>
         <div class="stat"><div class="stat-num down">4.0x → 3.0x</div><div class="stat-label">Leverage reduced</div></div>
