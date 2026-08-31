@@ -140,10 +140,11 @@ if (contactForm) {
 }
 
 // ---------- KAS contact card ----------
-const saveContactBtn = document.getElementById('saveContactBtn');
+function initContactCard() {
+  const saveContactBtn = document.getElementById('saveContactBtn');
+  const copyStatus = document.getElementById('copyStatus');
 
-if (saveContactBtn) {
-  const card = saveContactBtn.closest('.card');
+  if (!saveContactBtn) return;
 
   const contact = {
     name: 'Kas T. Kallie',
@@ -151,11 +152,11 @@ if (saveContactBtn) {
     title: 'Operating Partner',
     phone: '+1 917 523 0461',
     email: 'kas@dexm-m.com',
-    website: 'https://dexm-m.com',
-    linkedin: 'https://linkedin.com'
+    website: 'https://www.dexm-m.com',
+    linkedin: 'https://www.linkedin.com/in/kaskallie'
   };
 
-  // Текст для копирования всей визитки целиком
+  // Copy everything
   const allContactText = [
     contact.name,
     contact.company,
@@ -167,20 +168,6 @@ if (saveContactBtn) {
     `LinkedIn: ${contact.linkedin}`
   ].join('\n');
 
-  // Rich HTML-версия для буфера обмена (при вставке в почту)
-  const allContactHtml = `
-    <table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;color:#222">
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">Name</td><td style="padding:4px 0">Kas T. Kallie</td></tr>
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">Company</td><td style="padding:4px 0">DeXM Management</td></tr>
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">Title</td><td style="padding:4px 0">Operating Partner</td></tr>
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">Phone</td><td style="padding:4px 0">+1 917 523 0461</td></tr>
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">Email</td><td style="padding:4px 0">kas@dexm-m.com</td></tr>
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">Website</td><td style="padding:4px 0">https://dexm-m.com</td></tr>
-      <tr><td style="padding:4px 16px 4px 0;font-weight:600">LinkedIn</td><td style="padding:4px 0">https://linkedin.com</td></tr>
-    </table>
-  `;
-
-  // Универсальная функция копирования текста
   async function copyText(text) {
     if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(text);
@@ -191,60 +178,78 @@ if (saveContactBtn) {
     textarea.setAttribute('readonly', '');
     textarea.style.position = 'fixed';
     textarea.style.left = '-9999px';
+    textarea.style.top = '-9999px';
     document.body.appendChild(textarea);
     textarea.select();
     textarea.setSelectionRange(0, textarea.value.length);
     document.execCommand('copy');
-    textarea.remove();
+    document.body.removeChild(textarea);
   }
 
-  // Функция полного копирования по кнопке Save Contact
-  async function copyEverything() {
-    try {
-      if (navigator.clipboard?.write && window.ClipboardItem) {
-        const item = new ClipboardItem({
-          'text/html': new Blob([allContactHtml], { type: 'text/html' }),
-          'text/plain': new Blob([allContactText], { type: 'text/plain' })
-        });
-        await navigator.clipboard.write([item]);
-      } else {
-        await copyText(allContactText);
+  async function showCopyFeedback(element, duration = 1200) {
+    const original = element.textContent;
+    element.textContent = 'Copied ✓';
+    if (copyStatus) {
+      copyStatus.classList.add('show');
+    }
+    setTimeout(() => {
+      element.textContent = original;
+      if (copyStatus) {
+        copyStatus.classList.remove('show');
       }
+    }, duration);
+  }
 
-      const label = saveContactBtn.querySelector('.action-label');
-      const original = label.textContent;
-      label.textContent = 'Copied ✓';
-      setTimeout(() => { label.textContent = original; }, 1800);
-
+  // Save Contact button - copy everything
+  saveContactBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+      await copyText(allContactText);
+      const valueSpan = saveContactBtn.querySelector('.action-value');
+      if (valueSpan) {
+        await showCopyFeedback(valueSpan, 1800);
+      }
     } catch (err) {
       console.error('Could not copy contact information:', err);
     }
-  }
-
-  saveContactBtn.addEventListener('click', copyEverything);
-
-  // Копирование отдельных строк (клик по конкретному значению)
-  card.querySelectorAll('.action-value').forEach((value) => {
-    value.addEventListener('click', async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const row = value.closest('.action-btn');
-      let text = value.textContent.trim();
-      const href = row?.getAttribute('href') || '';
-
-      if (href.startsWith('tel:')) text = href.replace(/^tel:/, '');
-      if (href.startsWith('mailto:')) text = href.replace(/^mailto:/, '');
-      if (href.startsWith('http')) text = href;
-
-      try {
-        await copyText(text);
-        const original = value.textContent;
-        value.textContent = 'Copied ✓';
-        setTimeout(() => { value.textContent = original; }, 1200);
-      } catch (err) {
-        console.error('Could not copy value:', err);
-      }
-    });
   });
+
+  // Individual rows - copy specific values
+  const actionBtns = document.querySelectorAll('.action-btn:not(.primary)');
+  actionBtns.forEach((btn) => {
+    const valueSpan = btn.querySelector('.action-value');
+    if (valueSpan) {
+      valueSpan.style.cursor = 'pointer';
+      valueSpan.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        let textToCopy = valueSpan.textContent.trim();
+        const href = btn.getAttribute('href') || '';
+
+        // Extract clean values from links
+        if (href.startsWith('tel:')) {
+          textToCopy = href.replace(/^tel:/, '');
+        } else if (href.startsWith('mailto:')) {
+          textToCopy = href.replace(/^mailto:/, '');
+        } else if (href.startsWith('http')) {
+          textToCopy = href;
+        }
+
+        try {
+          await copyText(textToCopy);
+          await showCopyFeedback(valueSpan, 1200);
+        } catch (err) {
+          console.error('Could not copy value:', err);
+        }
+      });
+    }
+  });
+}
+
+// Run when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initContactCard);
+} else {
+  initContactCard();
 }
