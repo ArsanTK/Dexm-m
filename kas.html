@@ -138,7 +138,6 @@
     width:100%;
     display:flex;
     flex-direction:column;
-    border-top:1px solid var(--line);
   }
 
   .action-btn{
@@ -396,93 +395,7 @@
   <div class="card-foot">DEXM-M.COM &nbsp;·&nbsp; NEW YORK, NY</div>
 </div>
 
-<script>
-(function(){
-  const saveBtn = document.getElementById('saveContactBtn');
-  const copyStatus = document.getElementById('copyStatus');
-
-  const contact = {
-    name: 'Kas T. Kallie',
-    company: 'DeXM Management',
-    title: 'Operating Partner',
-    phone: '+1 917 523 0461',
-    email: 'kas@dexm-m.com',
-    website: 'https://www.dexm-m.com',
-    linkedin: 'https://www.linkedin.com/in/kaskallie',
-    location: 'New York, NY, USA'
-  };
-
-  const htmlTable = `
-    <table style="border-collapse:collapse;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:1.45;color:#222;">
-      <tbody>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Name</td><td style="padding:7px 0;">${contact.name}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Company</td><td style="padding:7px 0;">${contact.company}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Title</td><td style="padding:7px 0;">${contact.title}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Phone</td><td style="padding:7px 0;">${contact.phone}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Email</td><td style="padding:7px 0;">${contact.email}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Website</td><td style="padding:7px 0;">${contact.website}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">LinkedIn</td><td style="padding:7px 0;">${contact.linkedin}</td></tr>
-        <tr><td style="padding:7px 18px 7px 0;font-weight:600;white-space:nowrap;">Location</td><td style="padding:7px 0;">${contact.location}</td></tr>
-      </tbody>
-    </table>
-  `;
-
-  const plainText = [
-    `Name: ${contact.name}`,
-    `Company: ${contact.company}`,
-    `Title: ${contact.title}`,
-    `Phone: ${contact.phone}`,
-    `Email: ${contact.email}`,
-    `Website: ${contact.website}`,
-    `LinkedIn: ${contact.linkedin}`,
-    `Location: ${contact.location}`
-  ].join('\n');
-
-  async function copyContact(){
-    try{
-      if(navigator.clipboard && window.ClipboardItem){
-        const item = new ClipboardItem({
-          'text/html': new Blob([htmlTable], {type:'text/html'}),
-          'text/plain': new Blob([plainText], {type:'text/plain'})
-        });
-        await navigator.clipboard.write([item]);
-      }else if(navigator.clipboard){
-        await navigator.clipboard.writeText(plainText);
-      }else{
-        const temp = document.createElement('textarea');
-        temp.value = plainText;
-        temp.setAttribute('readonly','');
-        temp.style.position = 'fixed';
-        temp.style.opacity = '0';
-        document.body.appendChild(temp);
-        temp.select();
-        document.execCommand('copy');
-        temp.remove();
-      }
-
-      const oldValue = saveBtn.querySelector('.action-label').textContent;
-      saveBtn.querySelector('.action-label').textContent = 'Copied';
-      copyStatus.classList.add('show');
-
-      setTimeout(function(){
-        saveBtn.querySelector('.action-label').textContent = oldValue;
-        copyStatus.classList.remove('show');
-      }, 1800);
-
-    }catch(err){
-      console.error('Could not copy contact information:', err);
-      copyStatus.textContent = 'Copy failed — please try again';
-      copyStatus.classList.add('show');
-      setTimeout(function(){
-        copyStatus.classList.remove('show');
-        copyStatus.textContent = 'Contact table copied';
-      }, 2200);
-    }
-  }
-
-  saveBtn.addEventListener('click', copyContact);
-})();
-</script>
+<!-- Contact card copy functionality is handled by script.js -->
 
 </body>
 </html>
